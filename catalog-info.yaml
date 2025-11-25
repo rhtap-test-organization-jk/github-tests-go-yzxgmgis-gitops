@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: github-tests-go-yzxgmgis-gitops
+  description: This is GitOps manifest for github-tests-go-yzxgmgis   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=github-tests-go-yzxgmgis
+    backstage.io/kubernetes-id: github-tests-go-yzxgmgis 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: github-tests-go-yzxgmgis-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:github-tests-go-yzxgmgis
